@@ -1,0 +1,71 @@
+<div class="row">
+    <section class="section">
+      <header>
+        <h3>Customer Registration</h3>
+        <h4>Please fill your information in this form</h4>
+      </header>
+      
+          <form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm.value)"> 
+              <div class="col-md-6 form-item box-item" >
+                  <label for="userName" class="form-label"> Enter User Name : </label>
+                  <input type="text" class=" form-control border border-3 border border-dark tx1" data-required name="userName" id="userName" placeholder="Enter User Name" formControlName="userName">
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item" >
+                  <label for="password" class="form-label"> Enter Password : </label>
+                  <input type="password" class=" form-control border border-3 border border-dark tx1"  data-required name="password" id="password" placeholder="Enter Password" formControlName="password"> 
+              </div> 
+              <br>
+              <div class="col-md-6 form-item box-item">
+                  <label for="confirmPassword" class="form-label"> Enter Confirm Passord : </label>
+                  <input type="password"  class=" form-control border border-3 border border-dark tx1" data-required name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Your Password" formControlName="confirmPassword">
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item">
+                  <label for="firstName" class="form-label"> Enter First Name : </label>
+                  <input type="text" name="firstName" class=" form-control border border-3 border border-dark tx1" id="firstName"data-required placeholder="Enter First Name" formControlName="firstName"> 
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item">
+                  <label for="lastName" class="form-label"> Enter Last Name : </label>
+                  <input type="text" name="lastName"  class="tx1 form-control border border-3 border border-dark" id="lastName" placeholder="Enter Last Name" data-required formControlName="lastName"> 
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item">
+                  <label for="dateOfBirth" class="form-label"> Enter Date Of Birth : </label>
+                  <input type="date" name="dateOfBirth" class=" tx1 form-control border border-3 border border-dark" id="dateOfBirth" placeholder="Enter Date Of Birth" data-required formControlName="dateOfBirth"> 
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item">
+  
+                  <label for="phone" class="form-label"> Enter Phone Number : </label>
+                  <input type="text" name="phone" id="phone" data-required data-number data-count="10" class="tx1 form-control border border-3 border border-dark" placeholder="Enter Phone Number" formControlName="phoneNo"> 
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
+                  <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
+                  <small class="errorChar"><i class="fa fa-asterisk" aria-hidden="true"></i> must be 10 digits</small>
+                </div>
+              <br>           
+              <div class="col-md-6 form-item box-item">
+                  <label for="address" class="form-label"> Enter Address : </label>
+                  <input type="text" name="address" id="address" class="tx1 form-control border border-3 border border-dark" data-required placeholder="Enter Address" formControlName="address"> 
+                  <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
+              </div>
+              <br>
+              <div class="col-md-6 form-item box-item">
+                <label for="emailId" class="form-label"> Enter EmailId : </label>
+                <input type="email" name="emailId" id="emailId" class="form-control border border-3 border border-dark" placeholder="Enter EmailId" formControlName="emailId"> 
+                <small class="errorEmail"><i class="fa fa-asterisk" aria-hidden="true"></i> email is not valid</small>
+            </div>
+            <br>
+          <div class="form-item">
+           <button class="submit" value="submit">Register</button> 
+          </div>
+        </form>
+   
+      <i class="wave"></i>
+    </section>
+  </div>

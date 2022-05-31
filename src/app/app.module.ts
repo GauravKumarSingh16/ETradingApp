@@ -20,8 +20,7 @@ import { OrderListComponent } from './components/order-list/order-list.component
     SharesComponent,
     AddSharesComponent,
     UpdatesharesComponent,
-    OrderListComponent,
-    // PaymentDetailComponent
+    OrderListComponent
   ],
   imports: [
     BrowserModule,

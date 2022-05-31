@@ -12,8 +12,8 @@ export class BusinessOwnerService {
   apiUrl =`${environment.baseApiUrl}/businessOwners`;
 
   constructor(private client:HttpClient) { }
-  add(businessowner:any):Observable<BusinessOwner>
+  register(businessowner:any):Observable<Businessowner>
   {
-    return this.client.post<BusinessOwner>(this.apiUrl,businessowner);
+    return this.client.post<Businessowner>(this.apiUrl,businessowner);
   }
 }

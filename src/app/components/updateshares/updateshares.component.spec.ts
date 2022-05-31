@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowsharesComponent } from './showshares.component';
+import { UpdatesharesComponent } from './updateshares.component';
 
-describe('ShowsharesComponent', () => {
-  let component: ShowsharesComponent;
-  let fixture: ComponentFixture<ShowsharesComponent>;
+describe('UpdatesharesComponent', () => {
+  let component: UpdatesharesComponent;
+  let fixture: ComponentFixture<UpdatesharesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowsharesComponent ]
+      declarations: [ UpdatesharesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowsharesComponent);
+    fixture = TestBed.createComponent(UpdatesharesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

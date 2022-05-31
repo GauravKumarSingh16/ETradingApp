@@ -1,11 +1,11 @@
 <div class="row">
     <section class="section">
       <header>
-        <h3>Customer Registration</h3>
+        <h3>Registration</h3>
         <h4>Please fill your information in this form</h4>
       </header>
       
-          <form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm.value)"> 
+          <form [formGroup]="RegistrationForm" (ngSubmit)="onSubmit(RegistrationForm.value)"> 
               <div class="col-md-6 form-item box-item" >
                   <label for="userName" class="form-label"> Enter User Name : </label>
                   <input type="text" class=" form-control border border-3 border border-dark tx1" data-required name="userName" id="userName" placeholder="Enter User Name" formControlName="userName">
@@ -17,7 +17,7 @@
               </div> 
               <br>
               <div class="col-md-6 form-item box-item">
-                  <label for="confirmPassword" class="form-label"> Enter Confirm Passord : </label>
+                  <label for="confirmPassword" class="form-label"> Enter Confirm Password : </label>
                   <input type="password"  class=" form-control border border-3 border border-dark tx1" data-required name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Your Password" formControlName="confirmPassword">
                   <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> Required Field</small>
               </div>
@@ -61,11 +61,19 @@
                 <small class="errorEmail"><i class="fa fa-asterisk" aria-hidden="true"></i> email is not valid</small>
             </div>
             <br>
+            <div class="col-md-4" class="form-group relative">
+              <label for="userType" class="form-label"> Select User Type : </label>
+              <select name="userType" class="form-control border border-2 border border-dark" id="userType" formControlName="userType">
+                  <option value="customer"> Customer </option>
+                  <option value="businessowner"> Business Owner </option>            
+              </select>   
+          </div>
+          
           <div class="form-item">
            <button class="submit" value="submit">Register</button> 
           </div>
         </form>
-   
+        
       <i class="wave"></i>
     </section>
   </div>

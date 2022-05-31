@@ -1,6 +1,6 @@
 export class Share {
-    shareId!: number;
+    id!: number;
     shareName!:string;
-    shareType!: string;
+    ShareQuantity!: number;
     sharePrice!: number;
 }

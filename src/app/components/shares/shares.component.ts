@@ -3,6 +3,7 @@ import { FormGroup, FormControl, NgForm } from '@angular/forms';
 import { HttpClient, HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ShareService } from 'src/app/services/share.service';
+import { Share } from 'src/app/models/share';
 
 @Component({
   selector: 'app-shares',
@@ -11,26 +12,24 @@ import { ShareService } from 'src/app/services/share.service';
 })
 export class SharesComponent implements OnInit {
 
-  public message! : string;
-  public title! : string;
+  ShareList!:Share[];
 
-  shareForm! : FormGroup;
-  @Output() public onuploadFinished= new EventEmitter();
-
-  constructor(private shareService:ShareService,
-    private http:HttpClient,
-    private router:Router) { }
+  constructor(private shareService:ShareService){}
 
   ngOnInit(): void {
-    this.shareForm=new FormGroup({
-      shareName: new FormControl(),
-      shareType:new FormControl(),
-      sharePrice:new FormControl()
+    this.shareService.getShareList().subscribe(shares=>{
+      this.ShareList=shares;
+      console.log(shares);
+    },err=>{
+      console.log(err);
     });
   }
-  change()
-  {
-    this.title="Add Another Property";
+  deleteShare(id:number){
+    this.shareService.delete(id).subscribe(result=>{
+      alert('Share Deleted');
+      this.ngOnInit();
+    },err=>{
+      alert(err);
+    })
   }
-
 }
